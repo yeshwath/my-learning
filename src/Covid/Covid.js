@@ -4,15 +4,16 @@ import axios from "axios";
 
 
 const CovidApp = () => {
-  const [data,setData] = useState([])
+  const [data,setData] =   useState([])
   
   useEffect(() => {
     axios.get("http://data.covid19india.org/data.json")
       .then((response) => {
         setData(response.data.statewise);
       })
-      .catch((error) => {
-        console.error(error);
+      .catch((error) => 
+      {
+        console.error("error");
       });
   }, []);
   
